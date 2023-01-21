@@ -52,7 +52,7 @@ var PluginInstanceContainerController = (function () {
     };
     PluginInstanceContainerController.prototype.getEnv = function () { };
     PluginInstanceContainerController.prototype.installScript = function () {
-        return ['npm', 'install', '--legacy-peer-deps'];
+        return ['npm', 'install'];
     };
     PluginInstanceContainerController.prototype.runScript = function () {
         return ['npm', 'run', 'storybook', '-p', this.getPortNumber()];

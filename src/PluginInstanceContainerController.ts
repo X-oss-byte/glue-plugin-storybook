@@ -28,7 +28,7 @@ export class PluginInstanceContainerController implements IContainerController {
   getEnv() {}
 
   installScript() {
-    return ['npm', 'install', '--legacy-peer-deps'];
+    return ['npm', 'install'];
   }
 
   runScript() {
