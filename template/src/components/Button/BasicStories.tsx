@@ -2,7 +2,7 @@
 import type { ComponentStory } from '@storybook/react-native';
 import { Button } from '../Button';
 import React from 'react';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../Wrapper';
 
 type MyButtonStory = ComponentStory<typeof Button>;
 

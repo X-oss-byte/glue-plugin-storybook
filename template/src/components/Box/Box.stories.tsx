@@ -7,7 +7,7 @@ let colors: any = config?.tokens?.colors;
 if (!colors) colors = [];
 
 const MyBoxMeta: ComponentMeta<typeof Box> = {
-  title: 'LAYOUT/Box',
+  title: 'COMPONENTS/Stories/Box',
   component: Box,
   argTypes: {
     bg: {
@@ -29,6 +29,6 @@ const MyBoxMeta: ComponentMeta<typeof Box> = {
 
 export default MyBoxMeta;
 
-export { Basic } from './stories/Basic';
+export { Basic } from './BasicExample';
 
-export { WithRef } from './stories/WithRef';
+export { WithRef } from './WithRefExample';

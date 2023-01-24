@@ -1,8 +1,8 @@
 import React from 'react';
 import type { ComponentStory } from '@storybook/react-native';
-import { Button } from '../Button';
+import { Button } from './Button';
 import { View } from 'react-native';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../Wrapper';
 
 type MyButtonStory = ComponentStory<typeof Button>;
 
@@ -13,7 +13,7 @@ const ButtonSizes: MyButtonStory = ({}) => {
       <View>
         {sizes.map((size) => {
           return (
-            <Button size={size} key={size}>
+            <Button size={size} key={size} m={12}>
               <Button.Text>Button</Button.Text>
             </Button>
           );
