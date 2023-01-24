@@ -4,3 +4,4 @@ node_modules
 meta/
 yarn-error.log
 .next
+dist
