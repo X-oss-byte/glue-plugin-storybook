@@ -28,11 +28,11 @@ export class PluginInstanceContainerController implements IContainerController {
   getEnv() {}
 
   installScript() {
-    return ['npm', 'install'];
+    return ['yarn'];
   }
 
   runScript() {
-    return ['npm', 'run', 'storybook', '-p', this.getPortNumber()];
+    return ['yarn', 'storybook', '-p', this.getPortNumber()];
   }
 
   getDockerJson() {
