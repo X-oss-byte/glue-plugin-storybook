@@ -1,8 +1,8 @@
 import type { ComponentStory } from '@storybook/react-native';
 import React from 'react';
-import Wrapper from '../../Wrapper';
-import { Box } from '../Box';
-import { Text } from '../../Text';
+import Wrapper from '../Wrapper';
+import { Box } from './Box';
+import { Text } from '../Text';
 
 type MyCustomBoxStory = ComponentStory<typeof Box>;
 
@@ -18,7 +18,7 @@ export const Basic: MyCustomBoxStory = ({ bg, w, h, ...props }) => {
         justifyContent='center'
         alignItems='center'
       >
-        <Text>BOX</Text>
+        <Text color='$white'>BOX</Text>
       </Box>
     </Wrapper>
   );

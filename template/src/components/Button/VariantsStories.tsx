@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ComponentStory } from '@storybook/react-native';
-import Wrapper from '../../Wrapper';
+import Wrapper from '../Wrapper';
 import { View } from 'react-native';
 import { Button } from '../Button';
 
@@ -13,7 +13,7 @@ const ButtonVariants: MyButtonStory = ({}) => {
       <View>
         {variants.map((variant) => {
           return (
-            <Button variant={variant}>
+            <Button variant={variant} m={12}>
               <Button.Text>{variant}</Button.Text>
             </Button>
           );

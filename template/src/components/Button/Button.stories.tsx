@@ -3,7 +3,7 @@ import type { ComponentMeta } from '@storybook/react-native';
 import { Button } from './Button';
 
 const MyButtonMeta: ComponentMeta<typeof Button> = {
-  title: 'Form/Button',
+  title: 'COMPONENTS/Stories/Button',
   component: Button,
   args: {
     text: 'Button Text',
@@ -32,8 +32,8 @@ const MyButtonMeta: ComponentMeta<typeof Button> = {
 
 export default MyButtonMeta;
 
-export { Basic } from './stories/BasicStories';
+export { Basic } from './BasicStories';
 
-export { Variants } from './stories/VariantsStories';
+export { Variants } from './VariantsStories';
 
-export { Sizes } from './stories/SizesStories';
+export { Sizes } from './SizesStories';

@@ -1,7 +1,7 @@
 import type { ComponentStory } from '@storybook/react-native';
 import React from 'react';
-import Wrapper from '../../Wrapper';
-import { Box } from '../Box';
+import Wrapper from '../Wrapper';
+import { Box } from './Box';
 
 type MyCustomBoxStory = ComponentStory<typeof Box>;
 

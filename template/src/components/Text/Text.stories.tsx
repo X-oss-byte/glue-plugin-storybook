@@ -4,7 +4,7 @@ import Wrapper from '../Wrapper';
 import { Text } from './Text';
 
 const TextMeta: ComponentMeta<typeof Text> = {
-  title: 'TYPOGRAPHY/Text',
+  title: 'COMPONENTS/Stories/Text',
   component: Text,
   argTypes: {
     size: {
@@ -69,7 +69,9 @@ export const Sizes: SizeTextStory = () => {
   return (
     <Wrapper>
       {sizes.map((size: any) => (
-        <Text size={size}>{size}</Text>
+        <Text size={size} mx={12}>
+          {size}
+        </Text>
       ))}
     </Wrapper>
   );
