@@ -1,6 +1,6 @@
 {
   "name": "@gluestack/glue-plugin-storybook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create an Storybook Application using GlueStack framework",
   "repository": {
     "type": "git",
