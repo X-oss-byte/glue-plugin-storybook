@@ -1198,6 +1198,17 @@
     "@dank-style/cssify" "*"
     "@dank-style/media-query" "*"
 
+"@dank-style/react@0.1.20":
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/@dank-style/react/-/react-0.1.20.tgz#08bda2757116a244d2befbc6470c1b83b1e46c75"
+  integrity sha512-saVGyJVI16dKiaSVkUP/zwgcqS4tA1S9xaSBVOX2dLFS5mop3nuDoSw4y+7LOsl8N/5PhjYDYBG2dD7RQ1JF5w==
+  dependencies:
+    "@dank-style/color-mode" "*"
+    "@dank-style/convert-utility-to-sx" "*"
+    "@dank-style/css-injector" "*"
+    "@dank-style/cssify" "*"
+    "@dank-style/media-query" "*"
+
 "@discoveryjs/json-ext@^0.5.3":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -1686,10 +1697,11 @@
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
 "@gluestack/ui-creator@^0.1.0-alpha.10":
-  version "0.1.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@gluestack/ui-creator/-/ui-creator-0.1.0-alpha.12.tgz#36ccd09195fc19a98d83cf2f427bd7c82c25b491"
-  integrity sha512-V1mdaXuN7ewF03/nziQT9V1QW6pq9Sztl7ElhycrieAeDMdlNY+ujAalJ/6hwwfkDE2aSrHIlDUodE9b54lBpg==
+  version "0.1.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/@gluestack/ui-creator/-/ui-creator-0.1.0-alpha.14.tgz#a01b24931cb693698f03270c0999db54ab410e67"
+  integrity sha512-xpaFI9QgXpSHO/XGnSiVInXigLRZVfBBQi3+y9LgvqC3WaX+NIe2DLUCUdW6YeWCb+pRXQDrpKd9qet8mfNOUA==
   dependencies:
+    "@dank-style/react" "0.1.20"
     "@expo/html-elements" "^0.2.2"
     "@floating-ui/react" "^0.14.0"
     "@react-aria/focus" "^3.10.0"
@@ -3808,9 +3820,9 @@ acorn@^7.4.1:
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
 acorn@^8.5.0, acorn@^8.7.1:
-  version "8.8.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.1.tgz#0a3f9cbecc4ec3bea6f0a80b66ae8dd2da250b73"
-  integrity sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==
+  version "8.8.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
+  integrity sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==
 
 address@^1.0.1:
   version "1.2.2"
@@ -4326,9 +4338,9 @@ babel-plugin-react-docgen@^4.2.1:
     react-docgen "^5.0.0"
 
 babel-plugin-react-native-web@^0.18.10, babel-plugin-react-native-web@~0.18.2:
-  version "0.18.10"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.18.10.tgz#028c349d1c4c929f86dc757a4e724d3e651d3424"
-  integrity sha512-2UiwS6G7XKJvpo0X5OFkzGjHGFuNx9J+DgEG8TEmm+X5S0z6EB59W11RDEZghdKzsQzVbs1jB+2VHBuVgjMTiw==
+  version "0.18.11"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.18.11.tgz#e53f6f3ba1f663fe325cb7bec817fd8d7c2d710d"
+  integrity sha512-wSjYFaflJIzo3E/1vpzkx2HvKnodEEvYHv4rgxwloqOQY7wBC3RNRZ8Zhnlm77iaZg7W4Zp1d0iuVtVQHPxIdA==
 
 babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
@@ -4818,9 +4830,9 @@ camelize@^1.0.0:
   integrity sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001400:
-  version "1.0.30001447"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001447.tgz#ef1f39ae38d839d7176713735a8e467a0a2523bd"
-  integrity sha512-bdKU1BQDPeEXe9A39xJnGtY0uRq/z5osrnXUw0TcK+EYno45Y+U7QU9HhHEyzvMDffpYadFXi3idnSNkcwLkTw==
+  version "1.0.30001448"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001448.tgz#ca7550b1587c92a392a2b377cd9c508b3b4395bf"
+  integrity sha512-tq2YI+MJnooG96XpbTRYkBxLxklZPOdLmNIOdIhvf7SNJan6u5vCKum8iT7ZfCt70m1GPkuC7P3TtX6UuhupuA==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -10278,9 +10290,9 @@ react-native-swipe-gestures@^1.0.5:
   integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
 
 react-native-web@^0.18.10:
-  version "0.18.10"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.10.tgz#fb4db047f4be7f9cf35f37ec8d52f7d1c450600f"
-  integrity sha512-YV2gtZa1n7ulTGp+HcxH+KsAtaDPBI/dKd9oOQS31zyFHURjObLUVkKnGjkmlYAUReWfvmlU64GzyNwoZF9/tA==
+  version "0.18.11"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.11.tgz#3559c5b34fd628a2e9ab50ee8d2209d416b4accf"
+  integrity sha512-aJpc4wrcPpWyybnSbTTh0kBfe6xJ+T55Fi9AVmPlkeY3iuyk+5OxWwhzuzj3nZwwCBbvuFeuffj7T9sgwwX8nQ==
   dependencies:
     "@babel/runtime" "^7.18.6"
     create-react-class "^15.7.0"

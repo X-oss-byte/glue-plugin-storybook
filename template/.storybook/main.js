@@ -14,6 +14,8 @@ module.exports = {
   typescript: {
     reactDocgen: 'none',
   },
+
+  staticDirs: ['../public'],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.

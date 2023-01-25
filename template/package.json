@@ -16,7 +16,7 @@
     "update-stories": "sb-rn-get-stories --config-path .ondevice",
     "prestart": "yarn update-stories",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
-    "storybook": "start-storybook",
+    "storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook",
     "build-storybook": "build-storybook",
     "build": "bob build",
     "prepare": "bob build",

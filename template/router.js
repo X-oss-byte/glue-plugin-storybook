@@ -10,10 +10,10 @@
  */
 module.exports = () => [
   {
-    "path": "/",
-    "proxy": {
-      "path": "/"
+    path: '/storybook',
+    proxy: {
+      path: '/',
     },
-    "size_in_mb": "50"
-  }
+    size_in_mb: '50',
+  },
 ];
