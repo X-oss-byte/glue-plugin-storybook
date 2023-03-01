@@ -12,10 +12,10 @@ export declare class PluginInstanceContainerController implements IContainerCont
     getCallerInstance(): IInstance;
     getEnv(): void;
     installScript(): string[];
-    runScript(): (string | number)[];
+    runScript(): (string | Promise<number>)[];
     getDockerJson(): {};
     getStatus(): 'up' | 'down';
-    getPortNumber(returnDefault?: boolean): number;
+    getPortNumber(returnDefault?: boolean): Promise<number | null>;
     getContainerId(): string;
     setStatus(status: 'up' | 'down'): "up" | "down";
     setPortNumber(portNumber: number): number;

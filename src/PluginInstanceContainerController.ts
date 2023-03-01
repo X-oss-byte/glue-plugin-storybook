@@ -1,5 +1,5 @@
 import IApp from '@gluestack/framework/types/app/interface/IApp';
-import { SpawnHelper, DockerodeHelper } from '@gluestack/helpers';
+import { DockerodeHelper } from '@gluestack/helpers';
 import IInstance from '@gluestack/framework/types/plugin/interface/IInstance';
 import IContainerController from '@gluestack/framework/types/plugin/interface/IContainerController';
 
@@ -43,13 +43,25 @@ export class PluginInstanceContainerController implements IContainerController {
     return this.status;
   }
 
-  getPortNumber(returnDefault?: boolean): number {
-    if (this.portNumber) {
-      return this.portNumber;
-    }
-    if (returnDefault) {
-      return 6000;
-    }
+  // @ts-ignore
+  async getPortNumber(returnDefault?: boolean): Promise<number | null> {
+    return new Promise((resolve, reject) => {
+      if (this.portNumber) {
+        return resolve(this.portNumber);
+      }
+      let ports =
+        this.callerInstance.callerPlugin.gluePluginStore.get("ports") || [];
+      DockerodeHelper.getPort(6006, ports)
+        .then((port: number) => {
+          this.setPortNumber(port);
+          ports.push(port);
+          this.callerInstance.callerPlugin.gluePluginStore.set("ports", ports);
+          return resolve(this.portNumber);
+        })
+        .catch((e: any) => {
+          reject(e);
+        });
+    });
   }
 
   getContainerId(): string {
