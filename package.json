@@ -1,6 +1,6 @@
 {
   "name": "@gluestack/glue-plugin-storybook",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Create an Storybook Application using GlueStack framework",
   "repository": {
     "type": "git",
@@ -13,12 +13,12 @@
   "author": "Mayank Pagar",
   "license": "ISC",
   "dependencies": {
-    "@gluestack/framework": "^0.0.23",
-    "@gluestack/glue-plugin-engine": "^0.0.x",
+    "@gluestack/framework": "^0.0.x",
+    "@gluestack/helpers": "^0.0.x",
     "@types/node": "^18.11.18"
   },
   "peerDependencies": {
-    "@gluestack/framework": "^0.0.23"
+    "@gluestack/glue-plugin-engine": "^0.0.x"
   },
   "main": "dist/src/index.js",
   "scripts": {
