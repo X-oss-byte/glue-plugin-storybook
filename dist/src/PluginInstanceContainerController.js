@@ -51,10 +51,10 @@ var PluginInstanceContainerController = (function () {
     };
     PluginInstanceContainerController.prototype.getEnv = function () { };
     PluginInstanceContainerController.prototype.installScript = function () {
-        return ['yarn'];
+        return ['npm', 'install'];
     };
     PluginInstanceContainerController.prototype.runScript = function () {
-        return ['yarn', 'storybook', '-p', this.getPortNumber()];
+        return ['npm', 'storybook', '-p', this.getPortNumber()];
     };
     PluginInstanceContainerController.prototype.getDockerJson = function () {
         return {};
