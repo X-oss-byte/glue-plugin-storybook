@@ -68,7 +68,7 @@ var GlueStackPlugin = (function () {
         return "".concat(process.cwd(), "/node_modules/").concat(this.getName(), "/template");
     };
     GlueStackPlugin.prototype.getInstallationPath = function (target) {
-        return "./".concat(target);
+        return "./shared/".concat(target);
     };
     GlueStackPlugin.prototype.runPostInstall = function (instanceName, target) {
         return __awaiter(this, void 0, void 0, function () {
