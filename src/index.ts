@@ -1,5 +1,6 @@
 //@ts-ignore
 import packageJSON from "../package.json";
+import { writeEnv } from "./helpers/write-env";
 import { Workspaces } from "@gluestack/helpers";
 import { PluginInstance } from "./PluginInstance";
 import { reWriteFile } from "./helpers/rewrite-file";
@@ -63,6 +64,9 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
     if (!instance) {
       return;
     }
+
+    // adds .env file
+    await writeEnv(instance);
 
     // rewrite router.js with the installed instance name
     const routerFile = `${instance.getInstallationPath()}/router.js`;

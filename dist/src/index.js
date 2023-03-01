@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.GlueStackPlugin = void 0;
 var package_json_1 = __importDefault(require("../package.json"));
+var write_env_1 = require("./helpers/write-env");
 var helpers_1 = require("@gluestack/helpers");
 var PluginInstance_1 = require("./PluginInstance");
 var rewrite_file_1 = require("./helpers/rewrite-file");
@@ -81,17 +82,20 @@ var GlueStackPlugin = (function () {
                         if (!instance) {
                             return [2];
                         }
+                        return [4, (0, write_env_1.writeEnv)(instance)];
+                    case 2:
+                        _a.sent();
                         routerFile = "".concat(instance.getInstallationPath(), "/router.js");
                         return [4, (0, rewrite_file_1.reWriteFile)(routerFile, instanceName, 'INSTANCENAME')];
-                    case 2:
+                    case 3:
                         _a.sent();
                         pluginPackage = "".concat(instance.getInstallationPath(), "/package.json");
                         return [4, (0, rewrite_file_1.reWriteFile)(pluginPackage, instanceName, 'INSTANCENAME')];
-                    case 3:
+                    case 4:
                         _a.sent();
                         rootPackage = "".concat(process.cwd(), "/package.json");
                         return [4, helpers_1.Workspaces.append(rootPackage, instance.getInstallationPath())];
-                    case 4:
+                    case 5:
                         _a.sent();
                         return [2];
                 }

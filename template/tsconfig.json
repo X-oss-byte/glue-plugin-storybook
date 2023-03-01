@@ -1,13 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@gluestack/ui-creator": ["../creator/src/index"],
-      "@gluestack/popper": ["../popper/src/index"],
-      "@gluestack/ui": ["../ui/src/index"]
-    },
-    "emitDeclarationOnly": true,
-    "noEmit": false,
+    "paths": {},
     "declaration": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": true,
