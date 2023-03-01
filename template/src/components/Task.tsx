@@ -1,11 +1,12 @@
 
 import React from 'react';
 
-export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }: any) {
+// @ts-ignore
+export default function Task({ task, onArchiveTask, onPinTask }: any) {
   return (
     <div className="list-item">
-      <label htmlFor="title" aria-label={title}>
-        <input type="text" value={title} readOnly={true} name="title" />
+      <label htmlFor="title" aria-label={task.title}>
+        <input type="text" value={task.title} readOnly={true} name="title" />
       </label>
     </div>
   );
