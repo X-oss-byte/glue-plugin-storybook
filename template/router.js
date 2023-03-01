@@ -10,9 +10,13 @@
  */
 module.exports = () => [
   {
-    path: '/storybook',
+    server_name: "INSTANCENAME"
+  },
+  {
+    path: '/(.*)',
     proxy: {
-      path: '/',
+      path: '/$1',
+      instance: "INSTANCENAME:9000",
     },
     size_in_mb: '50',
   },
