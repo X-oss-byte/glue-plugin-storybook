@@ -1,15 +1,12 @@
 FROM node:lts
 
 # Install your app
-WORKDIR /gluestack/shared/{INSTANCE_NAME}
-
-COPY package*.json ./
-
+WORKDIR /gluestack/{INSTANCE_NAME}
+COPY . ./
+RUN ["sh", "-c", "npm config set legacy-peer-deps true"]
 RUN ["npm", "install"]
-RUN ["npm", "install", "typescript"]
 
+# Expose the port your app runs in
 EXPOSE 9000
 
-# Run the app using Dapr
-# CMD ["sh", "-c", "npm run storybook -- -p 9000"]
-CMD ["sh", "-c", "tail -f package.json"]
+CMD ["sh", "-c", "npm run storybook -- --port 9000"]
