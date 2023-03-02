@@ -15,7 +15,7 @@ import IManagesInstances from "@gluestack/framework/types/plugin/interface/IMana
 export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
   app: IApp;
   instances: IInstance[];
-	type: 'stateless' | 'stateful' | 'devonly' = 'stateless';
+	type: 'stateless' | 'stateful' | 'devonly' = 'devonly';
   gluePluginStore: IGlueStorePlugin;
 
   constructor(app: IApp, gluePluginStore: IGlueStorePlugin) {
@@ -49,7 +49,7 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
   }
 
   getInstallationPath(target: string): string {
-    return `./shared/${target}`;
+    return `./${target}`;
   }
 
   async runPostInstall(instanceName: string, target: string) {
