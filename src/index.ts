@@ -93,18 +93,14 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
       this.getComponentsInstallationPath()
     );
 
-    // update template root package.json's workspaces with the new instance name
     const rootPackage = join(process.cwd(), 'package.json');
+
+    // update template root package.json's workspaces with the new instance name
     await Workspaces.append(rootPackage, instance.getInstallationPath());
 
     // update components root package.json's workspaces with the new instance name
-    const componentPackage = join(
-      process.cwd(),
-      this.getComponentsInstallationPath(),
-      'package.json'
-    );
     await Workspaces.append(
-      componentPackage,
+      rootPackage,
       this.getComponentsInstallationPath()
     );
   }
