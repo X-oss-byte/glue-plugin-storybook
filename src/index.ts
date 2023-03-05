@@ -1,6 +1,8 @@
 //@ts-ignore
+import { join } from "path";
 import packageJSON from "../package.json";
 import { writeEnv } from "./helpers/write-env";
+import { Workspaces } from "@gluestack/helpers";
 import { PluginInstance } from "./PluginInstance";
 import { reWriteFile } from "./helpers/rewrite-file";
 import IApp from "@gluestack/framework/types/app/interface/IApp";
@@ -88,6 +90,21 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
     // copy components into gluestack project's shared folder
     await copyFolder(
       this.getComponentsFolderPath(),
+      this.getComponentsInstallationPath()
+    );
+
+    // update template root package.json's workspaces with the new instance name
+    const rootPackage = join(process.cwd(), 'package.json');
+    await Workspaces.append(rootPackage, instance.getInstallationPath());
+
+    // update components root package.json's workspaces with the new instance name
+    const componentPackage = join(
+      process.cwd(),
+      this.getComponentsInstallationPath(),
+      'package.json'
+    );
+    await Workspaces.append(
+      componentPackage,
       this.getComponentsInstallationPath()
     );
   }

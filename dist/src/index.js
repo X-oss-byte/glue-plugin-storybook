@@ -40,8 +40,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 exports.GlueStackPlugin = void 0;
+var path_1 = require("path");
 var package_json_1 = __importDefault(require("../package.json"));
 var write_env_1 = require("./helpers/write-env");
+var helpers_1 = require("@gluestack/helpers");
 var PluginInstance_1 = require("./PluginInstance");
 var rewrite_file_1 = require("./helpers/rewrite-file");
 var copyFolder = require("@gluestack/framework/helpers/file/copy-folder").copyFolder;
@@ -79,7 +81,7 @@ var GlueStackPlugin = (function () {
     };
     GlueStackPlugin.prototype.runPostInstall = function (instanceName, target) {
         return __awaiter(this, void 0, void 0, function () {
-            var instance, routerFile, pluginPackage;
+            var instance, routerFile, pluginPackage, rootPackage, componentPackage;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4, this.app.createPluginInstance(this, instanceName, this.getTemplateFolderPath(), target)];
@@ -101,6 +103,14 @@ var GlueStackPlugin = (function () {
                         _a.sent();
                         return [4, copyFolder(this.getComponentsFolderPath(), this.getComponentsInstallationPath())];
                     case 5:
+                        _a.sent();
+                        rootPackage = (0, path_1.join)(process.cwd(), 'package.json');
+                        return [4, helpers_1.Workspaces.append(rootPackage, instance.getInstallationPath())];
+                    case 6:
+                        _a.sent();
+                        componentPackage = (0, path_1.join)(process.cwd(), this.getComponentsInstallationPath(), 'package.json');
+                        return [4, helpers_1.Workspaces.append(componentPackage, this.getComponentsInstallationPath())];
+                    case 7:
                         _a.sent();
                         return [2];
                 }
