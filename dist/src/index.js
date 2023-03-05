@@ -44,7 +44,7 @@ var package_json_1 = __importDefault(require("../package.json"));
 var write_env_1 = require("./helpers/write-env");
 var PluginInstance_1 = require("./PluginInstance");
 var rewrite_file_1 = require("./helpers/rewrite-file");
-var copyFolder = require("@gluestack/framework/helpers").copyFolder;
+var copyFolder = require("@gluestack/framework/helpers/file/copy-folder").copyFolder;
 var GlueStackPlugin = (function () {
     function GlueStackPlugin(app, gluePluginStore) {
         this.type = 'devonly';

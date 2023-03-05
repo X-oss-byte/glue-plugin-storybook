@@ -10,7 +10,7 @@ import ILifeCycle from "@gluestack/framework/types/plugin/interface/ILifeCycle";
 import IGlueStorePlugin from "@gluestack/framework/types/store/interface/IGluePluginStore";
 import IManagesInstances from "@gluestack/framework/types/plugin/interface/IManagesInstances";
 
-const { copyFolder } = require("@gluestack/framework/helpers");
+const { copyFolder } = require("@gluestack/framework/helpers/file/copy-folder");
 
 //Do not edit the name of this class
 export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
