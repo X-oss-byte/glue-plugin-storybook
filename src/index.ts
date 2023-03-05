@@ -10,6 +10,8 @@ import ILifeCycle from "@gluestack/framework/types/plugin/interface/ILifeCycle";
 import IGlueStorePlugin from "@gluestack/framework/types/store/interface/IGluePluginStore";
 import IManagesInstances from "@gluestack/framework/types/plugin/interface/IManagesInstances";
 
+const { copyFolder } = require("@gluestack/framework/helpers");
+
 //Do not edit the name of this class
 export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
   app: IApp;
@@ -44,11 +46,19 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
   }
 
   getTemplateFolderPath(): string {
-    return `${process.cwd()}/node_modules/${this.getName()}/template`;
+    return `${process.cwd()}/node_modules/${this.getName()}/template/instance`;
   }
 
   getInstallationPath(target: string): string {
     return `./${target}`;
+  }
+
+  getComponentsFolderPath(): string {
+    return `${process.cwd()}/node_modules/${this.getName()}/template/components`;
+  }
+
+  getComponentsInstallationPath(): string {
+    return `./shared/components`;
   }
 
   async runPostInstall(instanceName: string, target: string) {
@@ -74,6 +84,12 @@ export class GlueStackPlugin implements IPlugin, IManagesInstances, ILifeCycle {
     // update package.json'S name index with the new instance name
     const pluginPackage = `${instance.getInstallationPath()}/package.json`;
     await reWriteFile(pluginPackage, instanceName, 'INSTANCENAME');
+
+    // copy components into gluestack project's shared folder
+    await copyFolder(
+      this.getComponentsFolderPath(),
+      this.getComponentsInstallationPath()
+    );
   }
 
   createInstance(

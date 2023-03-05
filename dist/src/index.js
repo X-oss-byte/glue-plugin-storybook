@@ -44,6 +44,7 @@ var package_json_1 = __importDefault(require("../package.json"));
 var write_env_1 = require("./helpers/write-env");
 var PluginInstance_1 = require("./PluginInstance");
 var rewrite_file_1 = require("./helpers/rewrite-file");
+var copyFolder = require("@gluestack/framework/helpers").copyFolder;
 var GlueStackPlugin = (function () {
     function GlueStackPlugin(app, gluePluginStore) {
         this.type = 'devonly';
@@ -65,10 +66,16 @@ var GlueStackPlugin = (function () {
         return this.type;
     };
     GlueStackPlugin.prototype.getTemplateFolderPath = function () {
-        return "".concat(process.cwd(), "/node_modules/").concat(this.getName(), "/template");
+        return "".concat(process.cwd(), "/node_modules/").concat(this.getName(), "/template/instance");
     };
     GlueStackPlugin.prototype.getInstallationPath = function (target) {
         return "./".concat(target);
+    };
+    GlueStackPlugin.prototype.getComponentsFolderPath = function () {
+        return "".concat(process.cwd(), "/node_modules/").concat(this.getName(), "/template/components");
+    };
+    GlueStackPlugin.prototype.getComponentsInstallationPath = function () {
+        return "./shared/components";
     };
     GlueStackPlugin.prototype.runPostInstall = function (instanceName, target) {
         return __awaiter(this, void 0, void 0, function () {
@@ -91,6 +98,9 @@ var GlueStackPlugin = (function () {
                         pluginPackage = "".concat(instance.getInstallationPath(), "/package.json");
                         return [4, (0, rewrite_file_1.reWriteFile)(pluginPackage, instanceName, 'INSTANCENAME')];
                     case 4:
+                        _a.sent();
+                        return [4, copyFolder(this.getComponentsFolderPath(), this.getComponentsInstallationPath())];
+                    case 5:
                         _a.sent();
                         return [2];
                 }

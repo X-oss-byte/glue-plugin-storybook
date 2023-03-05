@@ -17,10 +17,7 @@
     "prestart": "yarn update-stories",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook",
-    "build-storybook": "build-storybook",
-    "build": "bob build",
-    "prepare": "bob build",
-    "release": "release-it"
+    "build": "build-storybook"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.17.3",
@@ -56,28 +53,14 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-react-docgen-typescript": "^1.5.1",
     "babel-plugin-react-native-web": "^0.18.10",
-    "find-yarn-workspace-root": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native-builder-bob": "^0.20.3",
     "storybook-dark-mode": "^2.0.4",
     "typescript": "4.2.2"
   },
   "peerDependencies": {
     "react": "*",
     "react-dom": "*",
-    "react-native": "*",
     "react-native-web": "*"
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      [
-        "module"
-      ],
-      "typescript"
-    ]
   }
 }

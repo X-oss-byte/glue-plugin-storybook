@@ -17,6 +17,8 @@ export declare class GlueStackPlugin implements IPlugin, IManagesInstances, ILif
     getType(): 'stateless' | 'stateful' | 'devonly';
     getTemplateFolderPath(): string;
     getInstallationPath(target: string): string;
+    getComponentsFolderPath(): string;
+    getComponentsInstallationPath(): string;
     runPostInstall(instanceName: string, target: string): Promise<void>;
     createInstance(key: string, gluePluginStore: IGlueStorePlugin, installationPath: string): IInstance;
     getInstances(): IInstance[];
