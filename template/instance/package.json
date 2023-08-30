@@ -17,6 +17,7 @@
     "prestart": "yarn update-stories",
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook",
+    "start:prod": "export SET NODE_OPTIONS=--openssl-legacy-provider && start-storybook",
     "build": "build-storybook"
   },
   "dependencies": {
